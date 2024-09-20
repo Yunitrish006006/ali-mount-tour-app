@@ -40,6 +40,7 @@ dependencies:
   intl: any
   provider: ^6.1.2
   google_fonts: ^6.2.1
+  audioplayers: ^6.1.0
 
 dev_dependencies:
   flutter_test:
@@ -63,6 +64,13 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   generate: true
+  assets:
+    - assets/
+    - assets/texture/
+    - assets/texture/west/
+    - assets/texture/east/
+    - assets/voice/west/
+    - assets/voice/east/
 
   # To add assets to your application, add an assets section, like this:
   # assets:

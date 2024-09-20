@@ -1,15 +1,16 @@
 import 'package:adaptor_games/common/combined_notifier.dart';
-import 'package:adaptor_games/screen/main_page.dart';
+import 'package:adaptor_games/screen/loading_page.dart';
+import 'package:adaptor_games/screen/map_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const AliMountAppRoot());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class AliMountAppRoot extends StatelessWidget {
+  const AliMountAppRoot({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,11 @@ class MyApp extends StatelessWidget {
             locale: notifier.currentLocale,
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             supportedLocales: AppLocalizations.supportedLocales,
-            home: const MainPage(),
+            home: const LoadPage(),
+            routes: {
+              '/load_page': (context) => const LoadPage(),
+              '/map_page': (context) => const MapPage()
+            },
           );
         },
       ),
